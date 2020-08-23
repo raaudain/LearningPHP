@@ -7,7 +7,10 @@
 </head>
 <body>
     
-
+<?php 
+    // This function below displays message
+    echo "Hello There";
+?>
 
 </body>
 </html>

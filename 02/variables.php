@@ -7,6 +7,13 @@
 </head>
 <body>
     
+<?php 
+    $name = "Ramon";
+    $number = 23;
+    // To concatenate
+    echo $name . " " . $number;
+?>
+
 
 
 </body>

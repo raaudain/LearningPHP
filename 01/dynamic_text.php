@@ -6,8 +6,10 @@
     <title>Document</title>
 </head>
 <body>
-    
 
+<?php $title = "Official Site" ?>
+    
+<h1><?php echo $title ?></h1>
 
 </body>
 </html>

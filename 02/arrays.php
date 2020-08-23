@@ -7,7 +7,12 @@
 </head>
 <body>
     
+<?php 
+    $numberList = array(23,3,45,67,"ramon","<h1>Hey</h1>");
+    // echo $numberList[5];
 
+    // print_r($numberList)
+?>
 
 </body>
 </html>

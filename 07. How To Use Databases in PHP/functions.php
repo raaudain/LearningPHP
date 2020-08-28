@@ -8,9 +8,17 @@ function createUser() {
         $username = $_POST["username"];
         $password = $_POST["password"];
     
-        // Sanitizes files
+        // Sanitizes inputs in fields
         $username = mysqli_escape_string($connection, $username);
         $password = mysqli_escape_string($connection, $password);
+
+        // Encrypting password
+        $hashFormat = "$2y$10$";
+        $salt = "iusesomecrazystrings22";
+        $hash_and_salt = $hashFormat . $salt;
+
+        // Password is now encrypted
+        $password = crypt($password, $hash_and_salt);
 
         // Inserts into columns in users table
         $query = "INSERT INTO users(username, password) ";
@@ -35,7 +43,7 @@ function showAllData(){
     $result = mysqli_query($connection, $query);
     
     if (!$result) {
-        die("Query failed" . mysqli_error($connection));
+        die(mysqli_error($connection));
     }
 
     while($row = mysqli_fetch_assoc($result)) {
@@ -60,7 +68,7 @@ function updateTable() {
     $result = mysqli_query($connection, $query);
     
     if (!$result) {
-        die("QUERY FAILED" . mysqli_error($connection));
+        die(mysqli_error($connection));
     }
 }
 
